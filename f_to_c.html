@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fahrenheit To Celcius Converter</title>
+  <style>
+   html, body {
+   height:100%;
+   font-family: 'Signika Negative', sans-serif;
+   font-size: 25px;
+ }
+ html {
+  background: url('https://2.bp.blogspot.com/-SUMDIuZ7m48/TeWj1YDWcNI/AAAAAAAABhg/9fjPiDZHwms/s1600/winter.JPG') fixed;
+  background-size: 100%;
+}
+
+ div {
+   overflow: hidden;
+}
+
+ #header {
+   background: #fff;
+   padding: 1%;
+   overflow: hidden;
+   height: 55px;
+}
+
+ .fullscreen {
+    height: 50%;
+    position: relative;
+}
+
+ .fullscreen .header {
+   text-align: center;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   color: #fff;
+ }
+
+ .nopadding {
+   padding: 0;
+}
+  </style>
+</head>
+<body>
+<div class="fullscreen nopadding">
+ <div class="header">
+  <h1>Temperature Conversion</h1> 
+<p>
+<form action="/action_page.php">
+  <label>Fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="°F"
+  oninput="temperatureConverter(this.value)"
+  onchange="temperatureConverter(this.value)">
+ 
+ <input type="reset" value="Clear">
+</form>
+</p>
+<p><label>Celsius</label>
+   <textarea id="outputCelsius" type="number" rows="1" placeholder="°C"></textarea></p>
+<input type="button" value="Exit">
+</div>
+<script>
+   function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+}
+</script>
+</div>
+</body>
+</html>
